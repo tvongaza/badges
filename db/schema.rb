@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20140115020415) do
   end
 
   create_table "badges", force: true do |t|
-    t.string   "name"
-    t.boolean  "restricted"
+    t.string   "name",                       null: false
+    t.boolean  "restricted",  default: true, null: false
     t.text     "description"
     t.integer  "material"
     t.integer  "artwork_id"
