@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <%= f.text_field :name %>
+  <%= f.check_box :restricted %>
+  <%= f.text_area :description %>
+  <%= f.fields_for(:artwork) do |f2| %>
+    <%= f2.file_field :image %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
