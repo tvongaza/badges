@@ -1,4 +1,6 @@
 class BadgesController < ApplicationController
+  before_filter :requires_admin_access, except: :index
+
   before_action :set_badge, only: [:show, :edit, :update, :destroy]
 
   # GET /badges
