@@ -17,5 +17,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+tags
+*.swp
+.rvmrc
 *~

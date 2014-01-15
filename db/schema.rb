@@ -11,17 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115022929) do
+ActiveRecord::Schema.define(version: 20140115033435) do
 
   create_table "badges", force: true do |t|
-    t.string   "name",                       null: false
-    t.boolean  "restricted",  default: true, null: false
+    t.string   "name"
+    t.boolean  "restricted"
     t.text     "description"
     t.integer  "material"
     t.integer  "artwork_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "o_auth2_credentials", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.string   "signet"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "o_auth2_credentials", ["user_id"], name: "index_o_auth2_credentials_on_user_id"
 
   create_table "recognitions", force: true do |t|
     t.string   "type",         limit: 14

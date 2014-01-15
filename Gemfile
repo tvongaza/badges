@@ -51,4 +51,8 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+#
+
+gem 'google-api-client', :require => 'google/api_client'
+gem 'signet-rails', '>= 0.0.6'
