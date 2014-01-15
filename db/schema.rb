@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115020415) do
+ActiveRecord::Schema.define(version: 20140115022929) do
 
   create_table "awards", force: true do |t|
     t.text     "reason"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20140115020415) do
     t.text     "description"
     t.integer  "material"
     t.integer  "artwork_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recognitions", force: true do |t|
+    t.string   "type",         limit: 14
+    t.text     "reason"
+    t.integer  "recipient_id",            null: false
+    t.integer  "badge_id",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +57,8 @@ ActiveRecord::Schema.define(version: 20140115020415) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
