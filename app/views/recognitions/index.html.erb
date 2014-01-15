@@ -1,0 +1,23 @@
+<h1>Listing recognitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recognitions.each do |recognition| %>
+      <tr>
+        <td><%= link_to 'Destroy', recognition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recognition', new_recognition_path %>
