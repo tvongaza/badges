@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :badges, through: :awards
+  has_many :awards, foreign_key: :recipient_id, class_name: Award
+  has_many :recommendations, foreign_key: :recipient_id, class_name: Recommendation
+  has_many :granted_awards, foreign_key: :awarder_id
+  has_many :granted_recommendations, foreign_key: :awarder_id
 end

@@ -4,6 +4,7 @@ class CreateRecognitions < ActiveRecord::Migration
       t.string  :type, limit: 14
       t.text    :reason
       t.integer :recipient_id, null: false
+      t.integer :awarder_id, null: false
       t.integer :badge_id, null: false
       t.timestamps
     end
