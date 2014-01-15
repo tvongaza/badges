@@ -6,7 +6,8 @@ class BadgeAwardingService
   end
 
   def award(badge, recipient, reason = "")
+    return OpenStruct.new(errors: ["You can't award stuff to yourself"]) if recipient == awarder
     type = awarder.role < badge.material ? :recommendations : :awards
-    recipient.send(type).create!(awarder: awarder, reason: reason, badge: badge)
+    recipient.send(type).create(awarder: awarder, reason: reason, badge: badge)
   end
 end

@@ -24,12 +24,15 @@ class RecognitionsController < ApplicationController
   # POST /recognitions
   # POST /recognitions.json
   def create
-    @recognition = Recognition.new(recognition_params)
+    service = BadgeAwardingService.new(User.find(recognition_params[:awarder_id]))
+    badge = Badge.find recognition_params[:badge_id]
+    recipient = User.find recognition_params[:recipient_id]
+    @recognition = service.award(badge, recipient, "NO")
 
     respond_to do |format|
-      if @recognition.save
-        format.html { redirect_to @recognition, notice: 'Recognition was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @recognition }
+      if @recognition.errors.empty?
+        format.html { redirect_to recognitions_path, notice: 'Recognition was successfully created.' }
+        format.json { render action: 'index', status: :created, location: @recognition }
       else
         format.html { render action: 'new' }
         format.json { render json: @recognition.errors, status: :unprocessable_entity }
@@ -62,13 +65,12 @@ class RecognitionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recognition
-      @recognition = Recognition.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def recognition_params
-      params[:recognition]
-    end
+  def set_recognition
+    @recognition = Recognition.find(params[:id])
+  end
+
+  def recognition_params
+    params[:recognition]
+  end
 end

@@ -12,8 +12,6 @@
   <tbody>
     <% @recognitions.each do |recognition| %>
       <tr>
-        <td><%= link_to 'Show', recognition %></td>
-        <td><%= link_to 'Edit', edit_recognition_path(recognition) %></td>
         <td><%= link_to 'Destroy', recognition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

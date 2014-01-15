@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140115022929) do
     t.string   "name",                       null: false
     t.boolean  "restricted",  default: true, null: false
     t.text     "description"
-    t.integer  "material"
+    t.integer  "material",    default: 0,    null: false
     t.integer  "artwork_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,18 +34,19 @@ ActiveRecord::Schema.define(version: 20140115022929) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "role"
-    t.string   "name",                                null: false
+    t.integer  "role",                   default: 0,     null: false
+    t.string   "name",                                   null: false
     t.integer  "avatar_id"
-    t.boolean  "active"
+    t.boolean  "active",                 default: true,  null: false
+    t.boolean  "admin",                  default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

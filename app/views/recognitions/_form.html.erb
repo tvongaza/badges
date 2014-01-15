@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <%= f.collection_select :awarder_id, User.all, :id, :name %>
+
+  <%= f.collection_select :recipient_id, User.all, :id, :name %>
+
+  <%= f.collection_select :badge_id, Badge.all, :id, :name %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

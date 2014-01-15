@@ -62,13 +62,12 @@ class BadgesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_badge
-      @badge = Badge.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def badge_params
-      params[:badge]
-    end
+  def set_badge
+    @badge = Badge.find(params[:id])
+  end
+
+  def badge_params
+    params[:badge]
+  end
 end
