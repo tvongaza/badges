@@ -30,7 +30,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 2.14'
 end
 
 gem 'omniauth'
