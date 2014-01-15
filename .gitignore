@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Do not commit the secret keys
+/config/secret_keys.yml
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
