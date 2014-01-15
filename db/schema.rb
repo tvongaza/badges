@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115015719) do
+ActiveRecord::Schema.define(version: 20140115020415) do
+
+  create_table "awards", force: true do |t|
+    t.text     "reason"
+    t.integer  "recipient_id", null: false
+    t.integer  "badge_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "badges", force: true do |t|
     t.string   "name"
