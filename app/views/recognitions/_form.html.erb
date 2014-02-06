@@ -37,7 +37,7 @@
     </table>
 
     <label>Who Deserves This Award
-      <%= f.collection_select(:recipient, User.all, :id, :name, {}, { multiple: true, class: 'chosen-select' }) %>
+      <%= f.collection_select(:recipient, User.all, :id, :name, {}, { multiple: true, class: 'chosen-select', data: { placeholder: "Select some users" } }) %>
     </label>
 
     <label>Write Something Nice

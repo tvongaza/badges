@@ -105,3 +105,15 @@
     padding: 3px 3px 0 0;
   }
 }
+
+/*--------------------------------------------------
+* Forms
+*--------------------------------------------------*/
+
+.chosen-container {
+  margin-bottom: 1rem;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  height: 1.75rem;
+}
