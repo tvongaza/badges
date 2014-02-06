@@ -16,5 +16,6 @@ Badges::Application.routes.draw do
   resource :slide_show, only: :show
 
   resources :badges
+  resources :artworks, only: :show
   root to: "users#show"
 end

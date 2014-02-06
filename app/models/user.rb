@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
     badges.order('recognitions.created_at DESC').first
   end
 
+  # All but the most recent badge.
   def less_recent_badges
     badges.where.not(id: latest_badge.id)
   end
