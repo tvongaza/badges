@@ -44,6 +44,36 @@
 *--------------------------------------------------*/
 
 .public-dash {
+  .left,
+  .right {
+    border-right: solid 1px #ccc;
+  }
+  .user,
+  .badge-total,
+  .latest-badge {
+    border-bottom: solid 1px #ccc;
+  }
+  .user {
+    h1 {
+      font-size: 48px;
+    }
+    h3 {
+      font-size: 40px;
+    }
+  }
+  .badge-total {
+    h2 {
+      strong {
+        font-size: 80px;
+      }
+      .message {
+        font-weight: bold;
+      }
+    }
+  }
+  .badge-total {
+    padding: 20px;
+  }
   .commentor {
     margin-right: 20px;
   }
@@ -71,15 +101,6 @@
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-  }
-  .left,
-  .right {
-    border-right: solid 1px #ccc;
-  }
-  .user,
-  .badge-total,
-  .latest-badge {
-    border-bottom: solid 1px #ccc;
   }
 }
 
