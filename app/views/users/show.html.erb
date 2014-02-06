@@ -1,7 +1,12 @@
 <div class="header">
   <div class="row">
     <div class="small-3 columns" style="text-align: right;">
-      <%= image_tag("default_avatar.png", :alt => "avatar", :class =>"avatar") %>
+      <!-- Insert Google avatar -->
+      <% if user_signed_in? %>
+        <%= image_tag(current_user.avatar, :alt => "avatar", :class => "avatar")%>
+      <% else %>
+        <%= image_tag("default_avatar.png", :alt => "avatar", :class => "avatar") %>
+      <% end %> 
    </div>
     <div class="small-9 columns">
       <h1>Eugene Or</h1>
