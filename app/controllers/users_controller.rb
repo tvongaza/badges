@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @recognition = Recognition.new
   end
 end

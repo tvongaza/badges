@@ -43,6 +43,7 @@ end
 
 gem 'compass'
 gem 'foundation-rails', git: 'git://github.com/fimmtiu/foundation-rails.git'
+gem 'chosen-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
