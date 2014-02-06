@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 
   scope :active, where(active: true)
 
+  def latest_award
+    awards.order('created_at DESC').first
+  end
+
   def latest_badge
     badges.order('recognitions.created_at DESC').first
   end
