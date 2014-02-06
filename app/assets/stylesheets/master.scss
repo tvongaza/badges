@@ -1,3 +1,7 @@
+/*--------------------------------------------------
+* Util
+*--------------------------------------------------*/
+
 .float-left {
   float: left;
 }
@@ -23,6 +27,22 @@
 .text-align-right {
   text-align: right;
 }
+.text-align-right {
+  text-align: right;
+}
+
+/*--------------------------------------------------
+* Header
+*--------------------------------------------------*/
+
+#login-header {
+  padding: 30px;
+}
+
+/*--------------------------------------------------
+* Slideshow
+*--------------------------------------------------*/
+
 .public-dash {
   .commentor {
     margin-right: 20px;
@@ -60,5 +80,23 @@
   .badge-total,
   .latest-badge {
     border-bottom: solid 1px #ccc;
+  }
+}
+
+/*--------------------------------------------------
+* Profile
+*--------------------------------------------------*/
+
+.header {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0 65px 0;
+
+  .avatar {
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 90px;
+  }
+  .badge-small {
+    padding: 3px 3px 0 0;
   }
 }

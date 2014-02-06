@@ -14,23 +14,3 @@
 
  *= require_tree .
  */
-
-#login-header {
-	padding: 30px;
-}
-
-.header {
-	border-bottom: 1px solid #ccc;
-	padding: 10px 0 65px 0;
-}
-.avatar {
-	-webkit-border-radius: 90px;
-	-moz-border-radius: 90px;
-	border-radius: 90px;
-}
-.text-align-right {
-	text-align: right;
-}
-.badge-small {
-	padding: 3px 3px 0 0;
-}
