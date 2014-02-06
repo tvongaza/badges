@@ -1,28 +1,43 @@
-<h3>Slide show data for user <%= user.name %></h3>
-<div class="row">
-  <div class="columns large-4">
-    <h1>Eugene Or</h1>
-    <p>UI Designer</p>
-    <h2>10 Total <span>Not bad!</span></h2>
-    <ul>
-      <li>1 Gold</li>
-      <li>3 Silver</li>
-      <li>6 Bronze</li>
-    </ul>
-  </div>
-  <div class="columns large-8">
-    <h2>
-      Tu quoque, Brute, fili mi, nihil timor populi, nihil!
-    </h2>
-    <h3>Clean Kitchen King</h3>
-    <p>Awarded by Jason LaRiviere</p>
-    <p>Feb 31, 2014</p>
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-    </ul>
-  </div>
-</div>
+<section class="row public-dash">
+  <article class="columns large-4 left">
+    <div class="user">
+      <div class="avatar margin-center"></div>
+      <h1 class="text-align-center"><%= user.name %></h1>
+      <h3 class="text-align-center">UI Designer</h3>
+    </div>
+    <div class="badge-total">
+      <h2>10 Total <span>Not bad!</span></h2>
+    </div>
+    <div class="badge-breakdown">
+      <ul>
+        <li>1 Gold</li>
+        <li>3 Silver</li>
+        <li>6 Bronze</li>
+      </ul>
+    </div>
+  </article>
+  <article class="columns large-8 right">
+    <div class="latest-badge clearfix">
+      <h2 class="comment">
+        "Tu quoque, Brute, fili mi, nihil timor populi, nihil!""
+      </h2>
+      <div class="float-right">
+        <div class="commentor text-align-right clearfix">
+          <h3>Clean Kitchen King</h3>
+          <p>Awarded by Jason LaRiviere</p>
+          <p>Feb 31, 2014</p>
+        </div>
+        <div class="latest-badge-image clearfix"></div>
+      </div>
+    </div>
+    <div class="received-badges">
+      <ul>
+        <li class="badge">1</li>
+        <li class="badge">2</li>
+        <li class="badge">3</li>
+        <li class="badge">4</li>
+        <li class="badge">5</li>
+      </ul>
+    </div>
+  </article>
+</section>

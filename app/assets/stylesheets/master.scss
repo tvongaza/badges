@@ -1,0 +1,64 @@
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: " ";
+  height: 0px;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+.margin-center {
+  margin: 0 auto;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+.public-dash {
+  .commentor {
+    margin-right: 20px;
+  }
+  ul {
+    margin: 0;
+    list-style: none;
+    .badge {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      background-color: #aaa;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .latest-badge-image {
+    width: 200px;
+    height: 200px;
+    background-color: #ddd;
+  }
+  .avatar {
+    width: 250px;
+    height: 250px;
+    background-color: #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .left,
+  .right {
+    border-right: solid 1px #ccc;
+  }
+  .user,
+  .badge-total,
+  .latest-badge {
+    border-bottom: solid 1px #ccc;
+  }
+}
