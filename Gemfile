@@ -54,3 +54,4 @@ gem 'foundation-rails'
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+gem 'awesome_print', group: [:development, :test]

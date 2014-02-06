@@ -11,4 +11,18 @@ class User < ActiveRecord::Base
   has_many :granted_recommendations, foreign_key: :awarder_id
 
   scope :active, where(active: true)
+
+  def self.find_for_google_oauth2(access_token)
+    return unless access_token["extra"]["raw_info"]["hd"] = "goclio.com"
+    User.where(:email => access_token.info["email"]).first || User.create_user_from_token(access_token.info)
+  end
+
+  def self.create_user_from_token(data)
+    User.create(
+      name: data["name"],
+      email: data["email"],
+      password: Devise.friendly_token[0, 20]
+    )
+  end
+
 end
