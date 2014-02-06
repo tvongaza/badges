@@ -1,6 +1,9 @@
 <h1>Slide show</h1>
 
-<div id="user-slide-show-panel"></div>
+<div id="user-slide-show-panel">
+  FIXME: This is temporary until we unfuck jQuery
+  <%= render partial: 'users/slide', locals: {user: User.first} %>
+</div>
 
 <%= javascript_tag do %>
   $(function () {
