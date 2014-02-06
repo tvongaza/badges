@@ -14,7 +14,7 @@
   <div class="row">
     <h1>Award A Badge</h1>
     Select some badges and then select some people to receive them. That’s it!
-    <h2>Choose a Nifty Badge</h2>
+    <label>Choose a Nifty Badge</label>
     <table>
       <thead>
         <th></th>
@@ -35,12 +35,20 @@
         <% end %>
       </tbody>
     </table>
+
+    <label>Who Deserves This Award
+      <%= f.collection_select(:recipient, User.all, :id, :name, {}, { multiple: true, class: 'chosen-select' }) %>
+    </label>
+
+    <label>Write Something Nice
+      <%= f.text_area :reason %>
+    </label>
+
+    <div class="panel">
+      <label>When badges are awarded, the badges will appear on the public dashboard.</label>
+      <%= f.submit class: "button" %>
+    </div>
+
   </div>
 
-  <%= f.collection_select :awarder_id, User.all, :id, :name %>
-  <%= f.collection_select :recipient_id, User.all, :id, :name %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
