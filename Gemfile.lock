@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/fimmtiu/foundation-rails.git
+  revision: c2458e2444c941ebc8f2c7d4b0bba99a886d077b
+  specs:
+    foundation-rails (5.1.0.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,9 +68,6 @@ GEM
     execjs (2.0.2)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
-    foundation-rails (5.1.0.0)
-      railties (>= 3.1.0)
-      sass (>= 3.2.0)
     fssm (0.2.10)
     hashie (2.0.5)
     hike (1.2.3)
@@ -175,7 +180,7 @@ DEPENDENCIES
   compass
   debugger
   devise
-  foundation-rails
+  foundation-rails!
   jbuilder (~> 1.2)
   jquery-rails
   omniauth
