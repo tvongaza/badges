@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     badges.order('recognitions.created_at DESC').first
   end
 
+  def less_recent_badges
+    badges.where.not(id: latest_badge.id)
+  end
+
   def self.find_for_google_oauth2(access_token)
     return unless access_token["extra"]["raw_info"]["hd"] = "goclio.com"
     User.where(:email => access_token.info["email"]).first || User.create_user_from_token(access_token.info)
