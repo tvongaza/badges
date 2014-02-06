@@ -1,4 +1,6 @@
 class BadgesController < ApplicationController
+  before_filter :requires_admin_access, except: :index
+
   before_action :set_badge, only: [:show, :edit, :update, :destroy]
 
   # GET /badges
@@ -15,6 +17,7 @@ class BadgesController < ApplicationController
   # GET /badges/new
   def new
     @badge = Badge.new
+    @badge.build_artwork
   end
 
   # GET /badges/1/edit
@@ -68,6 +71,6 @@ class BadgesController < ApplicationController
   end
 
   def badge_params
-    params[:badge]
+    params[:badge].permit(:artwork_attributes, :name, :description, :restriction)
   end
 end
