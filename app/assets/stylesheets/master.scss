@@ -16,7 +16,7 @@
   visibility: hidden;
 }
 .clearfix {
-  display: inline-block;
+  clear: both;
 }
 .margin-center {
   margin: 0 auto;
@@ -44,38 +44,52 @@
 *--------------------------------------------------*/
 
 .public-dash {
-  .left,
-  .right {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  .left {
+    width: 25%;
     border-right: solid 1px #ccc;
+  }
+  .right {
+    width: 75%;
   }
   .user,
   .badge-total,
+  .badge-breakdown,
+  .latest-badge,
+  .received-badges {
+    padding: 20px;
+  }
+  .user,
+  .badge-count,
   .latest-badge {
     border-bottom: solid 1px #ccc;
   }
   .user {
-    h1 {
-      font-size: 48px;
+    .name {
+      font-size: 50px;
+      margin-bottom: 20px;
     }
-    h3 {
+    .title {
+      font-size: 30px;
+    }
+  }
+  .badge-count {
+    .total {
+      font-size: 80px;
+      vertical-align: middle;
+    }
+    .message {
+      font-weight: bold;
+    }
+  }
+  .badge-breakdown {
+    margin: 0;
+    list-style: none;
+    li {
       font-size: 40px;
     }
-  }
-  .badge-total {
-    h2 {
-      strong {
-        font-size: 80px;
-      }
-      .message {
-        font-weight: bold;
-      }
-    }
-  }
-  .badge-total {
-    padding: 20px;
-  }
-  .commentor {
-    margin-right: 20px;
   }
   ul {
     margin: 0;
@@ -94,9 +108,22 @@
     height: 200px;
     background-color: #ddd;
   }
+  .commentor {
+    margin-right: 20px;
+    .badge-name {
+      font-size: 30px;
+    }
+    .awarded-by {
+      font-size: 20px;
+    }
+    .awarded-on {
+      font-size: 15px;
+    }
+  }
   .avatar {
     width: 250px;
     height: 250px;
+    margin-bottom: 40px;
     background-color: #ccc;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;

@@ -1,47 +1,57 @@
-<section class="row public-dash">
-  <article class="columns large-4 left">
+<section class="public-dash">
+  <article class="left">
     <div class="user">
       <div class="avatar margin-center"></div>
-      <h1 class="text-align-center"><%= user.name %></h1>
-      <h3 class="text-align-center"><%= user.title %></h3>
+      <h1 class="name text-align-center">
+        <%= user.name %>
+      </h1>
+      <h3 class="title text-align-center">
+        <%= user.title %>
+      </h3>
     </div>
-    <div class="badge-total">
-      <h2><strong><%= user.badges.count %></strong> Total <span class="message">Not bad!</span></h2>
-    </div>
-    <div class="badge-breakdown">
-      <ul>
-        <li><%= user.badges.material("Gold").count %> Gold</li>
-        <li><%= user.badges.material("Silver").count %> Silver</li>
-        <li><%= user.badges.material("Bronze").count %> Bronze</li>
-      </ul>
-    </div>
-  </article>
-  <article class="columns large-8 right">
-    <div class="latest-badge clearfix">
-    <% if user.badges.count > 0 %>
-      <% badge = user.latest_badge %>
-      <% award = user.latest_award %>
-      <h2 class="comment">
-        <%= award.reason %>
+    <div class="badge-count">
+      <h2 class="text-align-center">
+        <span class="total"><%= user.badges.count %></span> Total <span class="message">Not bad!</span>
       </h2>
-      <div class="float-right">
-        <div class="commentor text-align-right clearfix">
-          <h3><%= badge.name %></h3>
-          <p>Awarded by <%= award.awarder.name %></p>
-          <p><%= award.created_at %></p>
-        </div>
-        <div class="latest-badge-image clearfix"></div>
-      </div>
     </div>
-    <div class="received-badges">
-      <ul>
+    <ul class="badge-breakdown text-align-center">
+      <li><%= user.badges.material("Gold").count %> Gold</li>
+      <li><%= user.badges.material("Silver").count %> Silver</li>
+      <li><%= user.badges.material("Bronze").count %> Bronze</li>
+    </ul>
+  </article>
+  <article class="right">
+    <% if user.badges.count > 0 %>
+      <div class="latest-badge">
+        <% badge = user.latest_badge %>
+        <% award = user.latest_award %>
+        <h2 class="comment">
+          "<%= award.reason %>"
+        </h2>
+        <div class="commentor">
+          <h3 class="badge-name">
+            <%= badge.name %>
+          </h3>
+          <p class="awarded-by">
+            Awarded by <%= award.awarder.name %>
+          </p>
+          <p class="awarded-on">
+            <%= award.created_at %>
+          </p>
+          <div class="latest-badge-image">
+            <%= badge.name %>
+          </div>
+        </div>
+      </div>
+      <ul class="received-badges">
         <% user.less_recent_badges.each do |badge|%>
           <li class="badge"><%= badge.name %></li>
         <% end %>
       </ul>
     <% else %>
-      Piss off.
+      <div class="latest-badge">
+        <p>Lame, you have no badges</p>
+      </div>
     <% end %>
-    </div>
   </article>
 </section>
