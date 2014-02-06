@@ -4,4 +4,8 @@ class UsersController < ApplicationController
     user = User.all.sample
     render partial: 'users/slide', locals: {user: user}
   end
+
+  def show
+    
+  end
 end
