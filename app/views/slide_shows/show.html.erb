@@ -7,7 +7,6 @@
     var load_slide = function () {
       $.ajax('<%= random_slide_users_path %>', {
         success: function (data, status, xhr) {
-console.log("BALLS");
           $("#user-slide-show-panel").html(data);
         },
         error: function (xhr, status, err) {
