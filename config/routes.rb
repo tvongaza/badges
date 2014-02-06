@@ -1,5 +1,5 @@
 Badges::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   with_options only: [:index, :new, :create, :destroy] do |wo|
     wo.resources :awards, controller: :recognitions
@@ -7,6 +7,14 @@ Badges::Application.routes.draw do
     wo.resources :recognitions
   end
 
+  resources :users do
+    collection do
+      get :random_slide
+    end
+  end
+
+  resource :slide_show, only: :show
+
   resources :badges
-  root :to => "badges#index"
+  root to: "badges#index"
 end

@@ -1,0 +1,23 @@
+<h1>Slide show</h1>
+
+<div id="user-slide-show-panel"></div>
+
+<%= javascript_tag do %>
+  $(function () {
+    var load_slide = function () {
+      $.ajax('<%= random_slide_users_path %>', {
+        success: function (data, status, xhr) {
+console.log("BALLS");
+          $("#user-slide-show-panel").html(data);
+        },
+        error: function (xhr, status, err) {
+          // Presently, it's a no-op.
+        },
+        complete: function (xhr, status) {
+          window.setTimeout(load_slide, 3000);
+        }
+      });
+    };
+    load_slide();
+  });
+<% end %>
