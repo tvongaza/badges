@@ -11,12 +11,34 @@
     </div>
   <% end %>
 
+  <div class="row">
+    <h1>Award A Badge</h1>
+    Select some badges and then select some people to receive them. That’s it!
+    <h2>Choose a Nifty Badge</h2>
+    <table>
+      <thead>
+        <th></th>
+        <th>Badge</th>
+        <th>Badge Name</th>
+        <th>Description</th>
+        <th>Label</th>
+      </thead>
+      <tbody>
+        <% Badge.all.each do |badge| %>
+          <tr>
+            <td><%= check_box_tag "recognition[badges][#{badge.id}]" %></td>
+            <td><%= badge.artwork.try(:image) %></td>
+            <td><%= badge.name %></td>
+            <td><%= badge.description %></td>
+            <td><%= badge.material_name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
   <%= f.collection_select :awarder_id, User.all, :id, :name %>
-
   <%= f.collection_select :recipient_id, User.all, :id, :name %>
-
-  <%= f.collection_select :badge_id, Badge.all, :id, :name %>
-
 
   <div class="actions">
     <%= f.submit %>
