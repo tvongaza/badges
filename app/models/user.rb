@@ -12,11 +12,6 @@ class User < ActiveRecord::Base
 
   scope :active, where(active: true)
 
-  def count_badges_by_material
-    badge_count = badges.group(:material).count
-    Hash[badge_count.map {|x| [Badge.material_name(x[0]), x[1]] }]
-  end
-
   def self.find_for_google_oauth2(access_token)
     return unless access_token["extra"]["raw_info"]["hd"] = "goclio.com"
     User.where(:email => access_token.info["email"]).first || User.create_user_from_token(access_token.info)
