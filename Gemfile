@@ -41,7 +41,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'foundation-rails'
+gem 'foundation-rails', git: 'git://github.com/fimmtiu/foundation-rails.git'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
