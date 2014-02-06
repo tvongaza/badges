@@ -95,6 +95,11 @@
     -webkit-border-radius: 90px;
     -moz-border-radius: 90px;
     border-radius: 90px;
+
+    @media only screen and (min-width: 999px) {
+      min-height: 180px;
+      min-width: 180px;
+    }
   }
   .badge-small {
     padding: 3px 3px 0 0;
