@@ -17,6 +17,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+config/client_secrets.json
 *~
 db/schema.rb
