@@ -12,14 +12,20 @@
   </head>
 
   <body>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-    <% if user_signed_in? %>
-      <%= image_tag(current_user.avatar) %>
-      <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
-    <% else %>
-      <%= link_to('Sign in', new_user_session_path) %>
-    <% end %>
+    <div class="row" id="login-header">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns text-align-right">
+
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <% if user_signed_in? %>
+          <%= image_tag(current_user.avatar) %>
+          <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+        <% else %>
+          <%= link_to('Sign in', new_user_session_path) %>
+        <% end %>
+      </div>
+    </div>
 
     <%= yield %>
   </body>
