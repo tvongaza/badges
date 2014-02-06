@@ -8,7 +8,11 @@ class Badge < ActiveRecord::Base
 
   validates_numericality_of :material, only_integer: true, greater_than: 0, less_than_or_equal_to: MATERIALS.length
 
+  def self.material_name(id)
+    MATERIALS[id]
+  end
+
   def material_name
-    MATERIALS[material]
+    self.class.material_name
   end
 end
