@@ -1,5 +1,5 @@
-["Fred Nozzle", "Rosemary Sousaphone", "Victoria Wobble", "Gerald Fnord"].each do |name|
-  User.create!(name: name, email: "#{name.downcase.sub(/\s+/, '.')}@clio.com", password: "testtest")
+{"Fred Nozzle" => "UI Mangler", "Rosemary Sousaphone" => "Cow Flenser", "Victoria Wobble" => "COBOL Analyst", "Gerald Fnord" => "Your Mother's Favourite Support Rep"}.each_pair do |name, title|
+  User.create!(name: name, title: title, email: "#{name.downcase.sub(/\s+/, '.')}@clio.com", password: "testtest")
 end
 users = User.all
 users.last.update_attributes!(active: false)
