@@ -41,6 +41,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'compass'
 gem 'foundation-rails', git: 'git://github.com/fimmtiu/foundation-rails.git'
 
 # Use ActiveModel has_secure_password
