@@ -1,6 +1,6 @@
 <div class="header">
   <div class="row">
-    <div class="small-3 columns" style="text-align: right;">
+    <div class="float-left" style="width:21%">
       <!-- Insert Google avatar -->
       <% if user_signed_in? %>
         <%= image_tag(current_user.avatar, :alt => "avatar", :class => "avatar")%>
@@ -8,9 +8,9 @@
         <%= image_tag("default_avatar.png", :alt => "avatar", :class => "avatar") %>
       <% end %> 
    </div>
-    <div class="small-9 columns">
-      <h1>Eugene Or</h1>
-      <p>UI Designer</p>
+    <div class="float-right" style="width:79%">
+      <h1><%= current_user.name %></h1>
+      <p>Position goes here</p>
       <div>
         <%= image_tag("badge_default.png", :alt => "badge", :class => "badge-small") %>
         <%= image_tag("badge_default.png", :alt => "badge", :class => "badge-small") %>
