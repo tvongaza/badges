@@ -16,6 +16,6 @@ class Badge < ActiveRecord::Base
   end
 
   def material_name
-    self.class.material_name
+    self.class.material_name(self.material)
   end
 end
