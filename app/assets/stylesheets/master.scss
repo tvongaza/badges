@@ -154,6 +154,26 @@
   }
 }
 
+.award_badge_container {
+  margin: 50px auto; 
+}
+
+.award_badge_table {
+  width:100%;
+  border: 0px;
+  border-spacing: 0;
+
+  thead{
+    background-color: #fff;
+  }
+
+  td, th {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 30px 0;
+  }
+}
+
 /*--------------------------------------------------
 * Forms
 *--------------------------------------------------*/
