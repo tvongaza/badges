@@ -180,6 +180,10 @@
     border-bottom: 1px solid #ccc;
     padding: 30px 0;
   }
+
+  input[type=checkbox] {
+    margin-bottom: 0;
+  }
 }
 
 .award_deserves_container, .write_something_nice_container {
