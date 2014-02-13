@@ -20,3 +20,6 @@
 
 *~
 db/schema.rb
+
+# Ignore bullshit Apple hidden files
+.DS_Store
