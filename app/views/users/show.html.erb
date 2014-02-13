@@ -9,7 +9,13 @@
       <% end %> 
    </div>
     <div class="float-right" style="width:79%">
-      <h1><%= current_user.try(:name) %></h1>
+      <h1>
+        <% if user_signed_in? %>
+          <%= current_user.try(:name) %>
+        <% else %>
+          Hello
+        <% end %>
+      </h1>
       <p>Position goes here</p>
       <div>
         <%= image_tag("badge_default.png", :alt => "badge", :class => "badge-small") %>

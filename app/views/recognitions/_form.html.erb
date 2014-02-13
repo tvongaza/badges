@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  <div class="row">
+  <div class="row award_badge_container">
     <h4>Award A Badge</h4>
-    Select some badges and then select some people to receive them. That’s it!
-    <label>Choose a Nifty Badge</label>
-    <table>
+    <p>Select some badges and then select some people to receive them. That’s it!</p>
+    <h6>Choose a Nifty Badge</h6>
+    <table class="award_badge_table">
       <thead>
         <th></th>
         <th>Badge</th>
@@ -27,7 +27,7 @@
         <% Badge.all.each do |badge| %>
           <tr>
             <td><%= check_box_tag "recognition[badges][#{badge.id}]" %></td>
-            <td><%= badge.artwork.try(:image) %></td>
+            <td><%= badge.artwork.try(:image) || image_tag("badge_med_thumbnail.png", :alt => "badge", :class => "badge-small") %></td>
             <td><%= badge.name %></td>
             <td><%= badge.description %></td>
             <td><%= badge.material_name %></td>
@@ -36,9 +36,9 @@
       </tbody>
     </table>
 
-    <label>Who Deserves This Award
+    <h6>Who Deserves This Award
       <%= f.collection_select(:recipient, User.all, :id, :name, {}, { multiple: true, class: 'chosen-select', data: { placeholder: "Select some users" } }) %>
-    </label>
+    </h6>
 
     <label>Write Something Nice
       <%= f.text_area :reason %>
