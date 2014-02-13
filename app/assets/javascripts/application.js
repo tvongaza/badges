@@ -20,4 +20,8 @@
 $(function() { 
   $(document).foundation(); 
   $(".chosen-select").chosen({});
+
+  $('input[data-check-all]').click(function() {
+    $($(this).data('check-all')).find('input[type=checkbox]').prop("checked", $(this).is(':checked'));
+  });
 });
