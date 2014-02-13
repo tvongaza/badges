@@ -40,7 +40,7 @@
               Awarded by <%= award.awarder.name %>
             </p>
             <p class="awarded-on">
-              <%= award.created_at %>
+              <%= award.created_at.strftime("%B %e, %Y") %>
             </p>
           </div>
         </div>
