@@ -186,13 +186,17 @@
   margin: 30px auto;
 }
 
-.textfield_container {
-  padding: 40px 25px;
-  background-color: #fafafa;
+.input-container {
+  background-color: #F2F2F3;
   border: 1px solid #cdcdcd;
   border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+
+.textfield_container {
+  @extend .input-container;
+  padding: 40px 25px;
 }
 
 .create_container {
@@ -204,10 +208,11 @@
 * Forms
 *--------------------------------------------------*/
 
-.chosen-container {
-  margin-bottom: 1rem;
-}
-
 .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   height: 1.75rem;
+}
+
+textarea {
+  @extend .input-container;
+  height: 8rem;
 }

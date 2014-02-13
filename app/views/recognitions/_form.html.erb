@@ -36,22 +36,24 @@
       </tbody>
     </table>
 
-    <div class="award_deserves_container">
-      <h6>Who Deserves This Award</h6>
-      <div class="textfield_container">
-        <%= f.collection_select(:recipient, User.all, :id, :name, {}, { multiple: true, class: 'chosen-select', data: { placeholder: "Select some users" } }) %>
+    <div class="large-8 columns">
+      <div class="award_deserves_container">
+        <h6>Who Deserves This Award</h6>
+        <div class="textfield_container">
+          <%= f.collection_select(:recipient, User.all, :id, :name, {}, { multiple: true, class: 'chosen-select', data: { placeholder: "Select some users" } }) %>
+        </div>
       </div>
-    </div>
 
-    <div class="write_something_nice_container">
-      <h6>Write Something Nice</h6>
-      <%= f.text_area :reason %>
-    </div>
+      <div class="write_something_nice_container">
+        <h6>Write Something Nice</h6>
+        <%= f.text_area :reason %>
+      </div>
 
-    <div class="panel create_container">
-      <p>When badges are awarded, the badges will appear on the public dashboard.</p>
-      <%= f.submit class: "button" %>
-    </div>
+      <div class="panel create_container">
+        <p>When badges are awarded, the badges will appear on the public dashboard.</p>
+        <%= f.submit class: "button radius" %>
+      </div>
+    </div>  
 
   </div>
 
