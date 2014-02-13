@@ -190,6 +190,14 @@
   padding: 40px 25px;
   background-color: #fafafa;
   border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.create_container {
+  border: 0;
+  padding: 40px 50px;
 }
 
 /*--------------------------------------------------
