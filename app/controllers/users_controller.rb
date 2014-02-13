@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :login_required
+
   def random_slide
     # user = User.active.order('RAND()').first    only works on MySQL. :-(
     user = User.all.sample
@@ -8,4 +10,5 @@ class UsersController < ApplicationController
   def show
     @recognition = Recognition.new
   end
+  
 end

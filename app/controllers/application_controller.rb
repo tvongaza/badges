@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     # current_user.admin?
     true
   end
+
+  def login_required(redirect_path = new_user_session_path)
+    redirect_to redirect_path unless user_signed_in?
+  end
 end
