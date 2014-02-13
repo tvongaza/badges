@@ -8,6 +8,9 @@
 .float-right {
   float: right;
 }
+.block {
+  display: block;
+}
 .clearfix:after {
   clear: both;
   display: block;
@@ -101,6 +104,11 @@
       background-color: #aaa;
       margin-right: 20px;
       margin-bottom: 20px;
+    }
+  }
+  .latest-badge {
+    h2 {
+      margin-bottom: 40px;
     }
   }
   .latest-badge-image {

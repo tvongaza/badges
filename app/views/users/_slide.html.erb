@@ -22,30 +22,34 @@
   </article>
   <article class="right">
     <% if user.badges.count > 0 %>
-      <div class="latest-badge">
+      <div class="latest-badge clearfix">
         <% badge = user.latest_badge %>
         <% award = user.latest_award %>
         <h2 class="comment">
           "<%= award.reason %>"
         </h2>
-        <div class="commentor">
-          <h3 class="badge-name">
-            <%= badge.name %>
-          </h3>
-          <p class="awarded-by">
-            Awarded by <%= award.awarder.name %>
-          </p>
-          <p class="awarded-on">
-            <%= award.created_at %>
-          </p>
-          <div class="latest-badge-image">
-            <%= badge.name %>
+        <div class="float-right">
+          <div class="latest-badge-image float-right">
+            <img src="" alt="<%= badge.name %>">
+          </div>
+          <div class="commentor float-right text-align-right">
+            <h3 class="badge-name">
+              <%= badge.name %>
+            </h3>
+            <p class="awarded-by">
+              Awarded by <%= award.awarder.name %>
+            </p>
+            <p class="awarded-on">
+              <%= award.created_at %>
+            </p>
           </div>
         </div>
       </div>
       <ul class="received-badges">
         <% user.less_recent_badges.each do |badge|%>
-          <li class="badge"><%= badge.name %></li>
+          <li class="badge">
+            <%= badge.name %>
+          </li>
         <% end %>
       </ul>
     <% else %>
