@@ -50,6 +50,19 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+  .avatar {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 40px;
+    background-color: #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
   .left {
     width: 25%;
     border-right: solid 1px #ccc;
@@ -60,6 +73,7 @@
   .user,
   .badge-total,
   .badge-breakdown,
+  .badge-count,
   .latest-badge,
   .received-badges {
     padding: 20px;
@@ -80,8 +94,11 @@
     }
   }
   .badge-count {
+    h2 {
+      font-size: 30px;
+    }
     .total {
-      font-size: 80px;
+      font-size: 60px;
       vertical-align: middle;
     }
     .message {
@@ -89,23 +106,17 @@
     }
   }
   .badge-breakdown {
-    margin: 0;
-    list-style: none;
     li {
-      font-size: 40px;
+      font-size: 30px;
     }
   }
-  ul {
-    margin: 0;
-    list-style: none;
-    .badge {
-      display: inline-block;
-      width: 150px;
-      height: 150px;
-      background-color: #aaa;
-      margin-right: 20px;
-      margin-bottom: 20px;
-    }
+  .badge {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-color: #aaa;
+    margin-right: 20px;
+    margin-bottom: 20px;
   }
   .latest-badge {
     height: 500px;
@@ -129,15 +140,6 @@
     .awarded-on {
       font-size: 15px;
     }
-  }
-  .avatar {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 40px;
-    background-color: #ccc;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
   }
 }
 
